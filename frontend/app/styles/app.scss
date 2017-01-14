@@ -1,0 +1,93 @@
+@import "pod-styles";
+@import "http://fonts.googleapis.com/css?family=Raleway:400,200,300,500,600,800";
+
+$brand: #ba0505;
+
+body {
+  font-family: 'Raleway', sans-serif;
+  background: #f9f9f9;
+  margin-top: 50px;
+}
+
+.card {
+  padding: 50px;
+  background: #fff;
+  border-radius: 2px;
+  box-shadow: 0px 0px 20px #eee;
+
+  h3 {
+    margin: 0;
+  }
+
+  &.form {
+    margin-top: 100px;
+  }
+}
+
+.spacer-10 {
+  padding: 10px 0;
+}
+
+.errors {
+  color: #ff6262;
+}
+
+.form {
+  input {
+    margin-bottom: 15px;
+
+    &:focus {
+      box-shadow: none;
+      border-color: $brand;
+    }
+  }
+
+  textarea {
+    &:focus {
+      box-shadow: none;
+      border-color: $brand;
+    }
+  }
+
+  label {
+    color: $brand;
+    font-size: 14px;
+    font-weight: 400;
+  }
+}
+
+.btn-default {
+  background: transparent;
+  border: 1px solid $brand;
+  color: $brand;
+  font-weight: 500;
+  border-radius: 0;
+  padding: 7px 30px;
+
+  &:hover {
+    background: $brand;
+    color: #fff;
+    border-color: $brand;
+  }
+}
+
+.form-control {
+  border: 0;
+  border-bottom: 1px solid #ccc;
+  border-radius: 0;
+  -webkit-box-shadow: none;
+  box-shadow: none;
+}
+
+.red {
+  color: red;
+}
+
+.btn-back {
+  background: #fff;
+  border-bottom: none;
+
+  &:hover {
+    color: #fff;
+  }
+}

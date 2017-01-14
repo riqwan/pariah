@@ -1,24 +1,13 @@
 # README
+A basic ember app setup using oauth2, doorkeeper under rails
 
-This README would normally document whatever steps are necessary to get the
-application up and running.
+# Steps to run the application:
 
-Things you may want to cover:
+Note: make sure you have Ruby running perfectly
 
-* Ruby version
-
-* System dependencies
-
-* Configuration
-
-* Database creation
-
-* Database initialization
-
-* How to run the test suite
-
-* Services (job queues, cache servers, search engines, etc.)
-
-* Deployment instructions
-
-* ...
+1. Unzip the zip file
+2. cd into the folder
+3. run `rake db:setup`
+4. run `bundle install`
+5. run `rails s`
+6. hit the given url on the browers, eg. 'localhost:3000/signup'

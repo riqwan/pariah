@@ -1,0 +1,28 @@
+<div class="form card">
+  <h3>Login</h3>
+
+  <div class="spacer-10"></div>
+    {{#if errorMessage}}
+      <div class="errors">
+        <p>{{errorMessage}}</p>
+      </div>
+    {{/if}}
+  <div class="spacer-10"></div>
+
+  <form {{action 'authenticate' on='submit'}} class="form">
+    <label for="identification">email</label>
+    {{input id='identification' placeholder='Enter email' value=identification class="form-control"}}
+    <label for="password">Password</label>
+    {{input id='password' placeholder='Enter Password' type='password' value=password class="form-control"}}
+
+    <div class="spacer-10"></div>
+    <div class="spacer-10"></div>
+
+    <div class="clearfix">
+      <div class="pull-right">
+        <button type="submit" class="btn btn-default">Login</button>
+      </div>
+    </div>
+  </form>
+</div>
+

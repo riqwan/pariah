@@ -11,9 +11,17 @@ gem 'puma', '~> 3.0'
 gem 'rack-cors'
 gem 'active_model_serializers'
 gem 'ember-cli-rails'
+gem 'devise'
+gem 'wkhtmltopdf-binary'
+gem 'wicked_pdf'
+gem 'doorkeeper'
 
 group :development, :test do
   gem 'pry'
+  gem 'factory_girl_rails'
+  gem 'shoulda-matchers', '~> 3.1'
+  gem 'rspec-rails'
+  gem 'spring-commands-rspec'
 end
 
 group :development do

@@ -1,0 +1,31 @@
+<div class="form card">
+  <h3>Signup</h3>
+
+  <div class="spacer-10"></div>
+    {{#if errorMessage}}
+      <div class="errors">
+        <p>{{errorMessage}}</p>
+      </div>
+    {{/if}}
+  <div class="spacer-10"></div>
+
+  <form {{action 'signup' on='submit'}} class="form">
+    <label for="email">Email</label>
+    {{input id='email' placeholder='Enter email' value=email class="form-control"}}
+    <label for="password">Password</label>
+    {{input id='password' placeholder='Enter Password' type='password' value=password class="form-control"}}
+    <label for="agent">
+      {{input id='agent' type='checkbox' checked=agent}}
+       Create as Agent?
+    </label>
+    <div class="spacer-10"></div>
+    <div class="spacer-10"></div>
+
+    <div class="clearfix">
+      <div class="pull-right">
+        <button type="submit" class="btn btn-default">Signup</button>
+      </div>
+    </div>
+  </form>
+</div>
+
