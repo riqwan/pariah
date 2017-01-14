@@ -3,6 +3,9 @@ import Ember from 'ember';
 export default Ember.Component.extend({
   setCurrentUser() {
     let _this = this;
+    let store = this.get('store');
+    let currentUser = this.get('currentUser');
+    let router = this.get('router');
 
     Ember.$.ajax({
       url: '/api/v1/users/me',
@@ -10,11 +13,11 @@ export default Ember.Component.extend({
       headers: {
         "Authorization": "Bearer " + this.get('session.data.authenticated.access_token')
       }
-    }).then(function(user) {
-      _this.get('store').pushPayload(user);
-      var user = _this.get('store').peekRecord('user', user.data.id)
-      _this.get('currentUser').set('account', user);
-      _this.get('router').transitionTo('protected.dashboard');
+    }).then((user) => {
+      store.pushPayload(user);
+      currentUser.set('account', store.peekRecord('user', user.data.id));
+
+      router.transitionTo('protected.index');
     });
   },
 
@@ -26,7 +29,7 @@ export default Ember.Component.extend({
       this.get('session').authenticate('authenticator:oauth2', identification, password).then(function (argument) {
         _this.setCurrentUser();
       }).catch((reason) => {
-        this.set('errorMessage', 'Unauthorized Access. Please check your credentials.');
+        _this.set('errorMessage', 'Unauthorized Access. Please check your credentials.');
       });
     }
   }
